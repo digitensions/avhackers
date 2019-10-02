@@ -1,5 +1,5 @@
 ///
-/// Fractal by HTML5 UP
+/// Eventually by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -14,27 +14,20 @@
 
 	header {
 		p {
+			color: _palette(fg-light);
 			position: relative;
 			margin: 0 0 (_size(element-margin) * 0.75) 0;
-
-			// Small.
-				@include breakpoint('<=small') {
-					br {
-						display: none;
-					}
-				}
-
 		}
 
 		h2 + p {
 			font-size: 1.25em;
-			margin-top: (_size(element-margin) * -0.25);
+			margin-top: (_size(element-margin) * -0.5);
 			line-height: 1.5em;
 		}
 
 		h3 + p {
 			font-size: 1.1em;
-			margin-top: (_size(element-margin) * -0.125);
+			margin-top: (_size(element-margin) * -0.4);
 			line-height: 1.5em;
 		}
 
@@ -46,26 +39,21 @@
 			line-height: 1.5em;
 		}
 
-		&.major {
-			margin: 0 0 (_size(element-margin) * 1.25) 0;
-			text-align: center;
-
-			&:after {
-				content: '';
-				border-bottom: solid (_size(border-width) * 2) _palette(border);
-				display: block;
-				width: 4em;
-				margin: _size(element-margin) auto 0 auto;
+		@include breakpoint('<=medium') {
+			br {
+				display: none;
 			}
+		}
 
-			// Small.
-				@include breakpoint('<=small') {
-					margin: 0 0 _size(element-margin) 0;
+		@include breakpoint('<=small') {
+			br {
+				display: inline;
+			}
+		}
 
-					p {
-						font-size: 1em;
-					}
-				}
-
+		@include breakpoint('<=xsmall') {
+			br {
+				display: none;
+			}
 		}
 	}
